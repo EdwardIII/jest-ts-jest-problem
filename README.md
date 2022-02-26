@@ -69,7 +69,7 @@ But tsc seems to have no problem compiling this into runnable JavaScript:
 
 Contents of index.js:
 
-```
+```js
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getRecords = void 0;
@@ -84,7 +84,7 @@ function getRecords() {
 exports.getRecords = getRecords;
 ```
 
-This is using ts-jasmine so we can still have type safety when running tests (instead of Babel).
+This is using ts-jest so we can still have type safety when running tests (instead of Babel).
 
 # I tried...
 
