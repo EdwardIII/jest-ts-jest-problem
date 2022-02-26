@@ -92,9 +92,21 @@ https://github.com/kulshekhar/ts-jest/blob/main/TROUBLESHOOTING.md
 
 But this mainly relates to rootDir, where the default makes sense here as everything is just literally in `.` at the project root
 
-Ensuring `esModuleInterop` and `esModuleInterop` are turned on in  `tsconfig.json`. 
+Ensuring `esModuleInterop` and `allowSyntheticDefaultImports` are turned on in  `tsconfig.json`. 
 
 Ensuring tsc can build executable JS out of this
 
 Ensuring ts-node can also run it without error
 
+Adding the suggestions from https://github.com/mtiller/ts-jest-sample to `jest.config.js`:
+
+```js
+module.exports = {
+    transform: {
+        "^.+\\.tsx?$": "ts-jest",
+    },
+    testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+    collectCoverage: true,
+};
+```
